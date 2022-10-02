@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './pages/Home';
 import Work from './pages/Work';
@@ -12,28 +11,11 @@ import {
 
 function App() {
   return (
-//     <div>
-
-//     <Router>
-//     <Header />
-//     <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//       <p>
-//      Edit <code>src/App.js</code> and save to reload.
-//       </p>
-  
-//       </header>
-//     <Route path="/" exact component={Home}/>
-//     <Route path="/work" component={Work} />
-// </Router>
-   
-//      </div>
-
 <BrowserRouter>
 <Header/>
 <Routes>
-  <Route path="/" exact component={Home} />
-  <Route path="/work" component={Work} />
+  <Route path="/" index element={<Home />} />
+  <Route path="/work" element={<Work />} />
 </Routes>
 </BrowserRouter>
   );
