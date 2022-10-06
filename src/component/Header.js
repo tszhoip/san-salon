@@ -4,22 +4,28 @@ import { Link } from 'react-router-dom';
 
 const Head = styled.nav`
     display: flex; 
-    // position: fixed;
-    // background-color: white;
-    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    justify-content: space-around;
     flex-direction: row;
     margin: auto;
+   top: 16px;
     @media only screen and (min-width : 480px) {
-    width: 50%;
+    width: 80%;
+    left: 10%;
     }
     @media only screen and (min-width : 768px) {
-    width: 50%;
+    width: 60%;
+    left: 20%;
     }
     @media only screen and (min-width : 1000px) {
-    width: 50%;
+    width: 40%;
+    left: 30%;
     }
     @media only screen and (min-width : 1800px) {
-    max-width: 1800px;
+        width: 40%;
     }
 `
 
@@ -44,8 +50,8 @@ flex-grow: ${props => props.grow};
 const Header = (props) => {
   return (
     <Head>
-      <Menuitem to="/">home</Menuitem>
-      <Menuitem to="/work">Work</Menuitem>
+      <Menuitem to="/">PRO</Menuitem>
+      <Menuitem to="/work">SNAP</Menuitem>
     </Head>
   )
 }
