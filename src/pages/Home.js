@@ -26,6 +26,14 @@ width: fit-content;
 height: 100%;
 overflow: hidden;
 border-radius: 0.75rem;
+object-fit: contain;
+padding: 5vw;
+`
+const ImgGroup = styled.div`
+display: flex;
+width: 100%;
+justify-content: space-around;
+
 `
 
 
@@ -52,60 +60,31 @@ function Home() {
 
 
     useEffect(() => {
-        timeline.to(bannerRef.current, { xPercent: -100, duration: 2 });
-        timeline.to(firstRef.current, { yPercent: -100, duration: 1 });
-        timeline.to(secondRef.current, { yPercent: -100, duration: 1 });
-        timeline.to(thirdRef.current, { yPercent: -100, duration: 1 });
-        timeline.to(forthRef.current, { yPercent: -100, duration: 1 });
-        timeline.to(fifthRef.current, { yPercent: -100, duration: 1 });
-        timeline.to(sixthRef.current, { yPercent: -100, duration: 1 });
-        
+        timeline.to(bannerRef.current, { yPercent: -50, duration: 10 }, "");
+        timeline.to(firstRef.current, { yPercent: -200, duration: 1 });
+        timeline.to(secondRef.current, { yPercent: -200, duration: 1 });
+        timeline.to(thirdRef.current, { yPercent: -200, duration: 4 });
+        timeline.to(forthRef.current, { yPercent: -200, duration: 3 });
+        timeline.to(fifthRef.current, { yPercent: -200, duration: 2 });
+        timeline.to(sixthRef.current, { yPercent: -200, duration: 1 });
+
     }, [timeline]);
 
     return (
         <div>
-            <Banner2 />
             <Banner ref={bannerRef} className="test" />
-            <div className="textCrop">
-                <h1 ref={titleRef}>annexartdrop</h1>
-                <div className="imageContainer">
-                   <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={firstRef} />
-                  
-                    <div className="imageCard" ref={secondRef}>
-                        <div className="imageCrop">
-                            <img
-                                alt=""
-                                src="https://images.unsplash.com/photo-1551913902-c92207136625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                            />
-                        </div>
-                    </div>
-                    <div className="imageCard" ref={thirdRef}>
-                        <div className="imageCrop">
-                            <img
-                                alt=""
-                                src="https://images.unsplash.com/photo-1551913902-c92207136625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                            />
-                        </div>
-                    </div>
-                    <div className="imageCard" ref={forthRef}>
-                        <div className="imageCrop">
-                            <img
-                                alt=""
-                                src="https://images.unsplash.com/photo-1551913902-c92207136625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                            />
-                        </div>
-                    </div>
-                    <div className="imageCard" ref={sixthRef}>
-                        <div className="imageCrop">
-                            <img
-                                alt=""
-                                src="https://images.unsplash.com/photo-1551913902-c92207136625?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section></section>
+            <ImgGroup>
+                <ImgCrop src="https://images.unsplash.com/photo-1508138221679-760a23a2285b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80" ref={firstRef} />
+                <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={secondRef} />
+            </ImgGroup>
+            <ImgGroup>
+                <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={thirdRef} />
+                <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={forthRef} />
+            </ImgGroup>
+            <ImgGroup>
+                <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={fifthRef} />
+                <ImgCrop src="https://images.unsplash.com/photo-1664787812637-150e7d63f68d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" ref={sixthRef} />
+            </ImgGroup>
         </div>
     );
 }
