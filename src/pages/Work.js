@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Worklist = styled.div`
-position: absolute;
-top:160px;
+position: relative;
+
 `
 
 function Work() {
 
   return (
     <Worklist>
-     <h1>sdaffeffe</h1>
-     <h1>sdaffeffe</h1>
+     <h1>林雪飞</h1>
+     <h1>Figo.Lin</h1>
      <h1>sdaffeffe</h1>
      <h1>sdaffeffe</h1>
      <h1>sdaffeffe</h1>
